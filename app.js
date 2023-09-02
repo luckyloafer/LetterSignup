@@ -5,6 +5,7 @@ const https = require("https");
 const app=express();
 
 app.use(express.static("public"));
+app.use("/uploads", express.static("./uploads"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",function(req,res){
@@ -34,7 +35,7 @@ app.post("/",function(req,res){
 
      const options={
         method: "POST",
-        auth: "lakshman:823f0a7bbc1231d60585fc3ae40a3e1d-us21"
+        auth: "lakshman:c90a3f583c5bace9af4616fb6a8a1956-us21"
      }
     const request= https.request(url,options,function(response){
         if(response.statusCode==200){
